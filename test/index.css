@@ -1,0 +1,145 @@
+:root {
+  --darkest: #3c4048;
+  --gray: #b2b2b2;
+  --white: #b2b2b2;
+  --middle-width: 800px;
+  --side-width: 200px;
+  --page-width: 1200px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+/* =========== */
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template: minmax(100px, auto) 1fr minmax(60px, auto) / 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+/* Header content */
+.header {
+  grid-area: header;
+  padding: 15px;
+  background-color: var(--darkest);
+  display: grid;
+  align-items: center;
+  grid-template:
+    1fr/1fr minmax(auto, var(--side-width)) minmax(auto, var(--middle-width)) minmax(
+      auto,
+      var(--side-width)
+    )
+    1fr;
+}
+.header__logo {
+  color: var(--white);
+  grid-column: 2/3;
+}
+.header__menu {
+  grid-column: 3/4;
+}
+.header__button {
+  display: grid;
+  grid-column: 4/5;
+  justify-items: end;
+}
+.button_submit {
+  height: 40px;
+  width: 100px;
+}
+.header__list {
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: center;
+}
+.header__link {
+  color: var(--white);
+}
+/* Main content */
+.main {
+}
+.content {
+  grid-area: main;
+  padding: 15px;
+  background-color: rgb(127, 47, 116);
+  display: grid;
+  align-items: center;
+  grid-template: repeat(4, auto) / 1fr minmax(auto, var(--page-width)) 1fr;
+}
+.content__upper {
+  grid-column: 2/3;
+  width: 60%;
+  padding: 15px 0 15px 0;
+}
+.content__brands {
+  grid-column: 2/3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0 15px 0;
+}
+.brands__img {
+}
+.content__middle {
+  grid-column: 2/3;
+  display: grid;
+  gap: 15px;
+  grid-template: repeat(2, minmax(150px, auto)) / repeat(2, minmax(auto, 1fr));
+  padding: 15px 0 15px 0;
+}
+.middle__item {
+  
+}
+.middle__item .item-3{
+
+}
+.middle__item .item-4{
+
+}
+.content__lower {
+  grid-column: 2/3;
+  padding: 15px 0 15px 0;
+  width: 60%;
+}
+.lower__button {
+  height: 40px;
+  width: 100px;
+}
+
+/* Footer content */
+.footer {
+  grid-area: footer;
+  padding: 15px;
+  background-color: var(--darkest);
+  display: grid;
+  align-items: center;
+  grid-template:
+    1fr/1fr minmax(auto, var(--side-width)) minmax(auto, var(--middle-width)) minmax(
+      auto,
+      var(--side-width)
+    )
+    1fr;
+  padding: 15px 0 15px 0;
+}
+.footer__logo {
+  color: var(--white);
+  grid-column: 2/3;
+}
+.footer__social {
+  display: grid;
+  grid-column: 4/5;
+  grid-auto-flow: column;
+  justify-items: end;
+}
